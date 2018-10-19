@@ -18,12 +18,10 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe ( parametros => {
-      console.log(parametros['idProd']);
       this.productoService.getProducto(parametros['idProd'])
           .subscribe ( (producto: ProductoDesc) => {
             this.producto = producto;
             this.prodId = parametros['idProd'];
-            console.log(producto);
           });
     });
   }

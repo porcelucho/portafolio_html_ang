@@ -16,7 +16,6 @@ export class InfoPaginaService {
   equipoCargado = false;
 
   constructor( private http: HttpClient) {
-    console.log('Pagina cargada correctamente');
     this.cargarInfo();
     this.cargarEquipo();
   }
@@ -26,7 +25,6 @@ export class InfoPaginaService {
     this.http.get('assets/data/data-pagina.json').subscribe( resp => {
           this.dataCargada = true;
           this.info = resp;
-          console.log(resp);
     });
   }
 
@@ -35,7 +33,6 @@ export class InfoPaginaService {
       this.dataCargada = true;
       this.equipo = resp;
       this.info.equipo_work = resp;
-      console.log(resp);
     });
   }
 }
